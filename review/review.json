@@ -22,7 +22,12 @@
       "screenshot": "shots/red-command-bar.png"
     }
   ],
-  "video": null,
+  "video": {
+    "src": "demo.mp4",
+    "captions": "demo.vtt",
+    "poster": "demo.jpg",
+    "title": "The same 20-second drawing flow in each of the three toolbars"
+  },
   "pr": null,
   "updated": "2026-11-19"
 }
