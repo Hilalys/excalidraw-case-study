@@ -1,0 +1,58 @@
+.toolbar-room-to-draw {
+  --room-tool-width: 44px;
+  --room-tool-gap: 12px;
+}
+
+.toolbar-room-to-draw > .App-toolbar > .Stack_horizontal {
+  column-gap: var(--room-tool-gap);
+}
+
+.toolbar-room-to-draw > .App-toolbar > .Stack_horizontal > .ToolIcon > .ToolIcon__icon,
+.toolbar-room-to-draw > .App-toolbar > .Stack_horizontal .App-toolbar__extra-tools-trigger {
+  width: var(--room-tool-width);
+  height: 44px;
+}
+
+.toolbar-room-to-draw > .App-toolbar > .Stack_horizontal > .ToolIcon--checked > .ToolIcon__icon,
+.toolbar-room-to-draw .App-toolbar .App-toolbar__extra-tools-trigger--selected {
+  box-shadow: inset 0 0 0 1px var(--color-on-primary-container);
+}
+
+.toolbar-room-to-draw > .App-toolbar > .Stack_horizontal > .ToolIcon:focus-visible,
+.toolbar-room-to-draw .App-toolbar .App-toolbar__extra-tools-trigger:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 1px;
+  box-shadow: none;
+}
+
+@media (max-width: 1000px) {
+  .toolbar-room-to-draw {
+    --room-tool-gap: 8px;
+  }
+}
+
+@media (max-width: 860px) {
+  .toolbar-room-to-draw {
+    --room-tool-width: 40px;
+    --room-tool-gap: 6px;
+  }
+}
+
+@media (width < 768px) {
+  .toolbar-room-to-draw {
+    --room-tool-width: 34px;
+    --room-tool-gap: 3px;
+  }
+
+  .toolbar-room-to-draw > .App-toolbar > .Stack_horizontal > .ToolIcon:focus-visible,
+  .toolbar-room-to-draw .App-toolbar .App-toolbar__extra-tools-trigger:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+@media (width < 650px) {
+  .toolbar-room-to-draw {
+    --room-tool-width: 31px;
+    --room-tool-gap: 1.5px;
+  }
+}
