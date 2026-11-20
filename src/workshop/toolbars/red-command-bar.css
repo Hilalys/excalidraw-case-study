@@ -1,0 +1,126 @@
+.excalidraw .toolbar-red-command-bar {
+  --command-red: #de1235;
+  --command-ink: #251219;
+  --command-paper: #fff;
+  --command-hover: #a50b29;
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  padding-inline-end: 4px;
+  border-radius: var(--border-radius-lg);
+  background: var(--command-red);
+  box-shadow: var(--shadow-island);
+}
+
+.excalidraw.theme--dark .toolbar-red-command-bar {
+  box-shadow: 0 0 0 1px #ff8296, var(--shadow-island);
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar {
+  background: transparent;
+  box-shadow: none;
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar__divider {
+  background: #ff9aab;
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar > .Stack_horizontal > .ToolIcon {
+  --icon-fill-color: var(--command-paper);
+  --keybinding-color: var(--command-paper);
+  --color-on-primary-container: var(--command-ink);
+  --color-surface-primary-container: var(--command-paper);
+  --button-hover-bg: var(--command-hover);
+  --button-active-border: var(--command-paper);
+  --color-disabled: #ffb1be;
+}
+
+.excalidraw .toolbar-red-command-bar .ToolIcon:not(:disabled) .ToolIcon__icon:active {
+  --color-on-primary-container: var(--command-paper);
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar__extra-tools-trigger {
+  color: var(--command-paper);
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar__extra-tools-trigger:hover {
+  background: var(--command-hover);
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar__extra-tools-trigger--selected,
+.excalidraw .toolbar-red-command-bar .App-toolbar__extra-tools-trigger--selected:hover {
+  color: var(--command-ink);
+  background: var(--command-paper);
+}
+
+.excalidraw .toolbar-red-command-bar .App-toolbar :is(.ToolIcon, .App-toolbar__extra-tools-trigger):focus-visible {
+  outline: 2px solid var(--command-paper);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 1px var(--command-ink);
+}
+
+.excalidraw .toolbar-red-command-bar .red-command-mode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-inline-size: 9.5rem;
+  box-sizing: border-box;
+  margin-block: 4px;
+  padding: 4px 10px;
+  border-radius: calc(var(--border-radius-lg) - 2px);
+  background: var(--command-ink);
+  color: var(--command-paper);
+  font: 600 0.875rem/1.2 var(--ui-font);
+  white-space: nowrap;
+}
+
+.excalidraw .toolbar-red-command-bar .red-command-mode svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.excalidraw .toolbar-red-command-bar .red-command-mode-label {
+  color: #ffb1be;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .excalidraw .toolbar-red-command-bar {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-inline-end: 0;
+  }
+
+  /* Anchor the drawing hint below both the controls and the readout. */
+  .excalidraw .toolbar-red-command-bar .App-toolbar {
+    position: static;
+  }
+
+  .excalidraw .toolbar-red-command-bar .red-command-mode {
+    min-inline-size: 0;
+    margin-block-start: 0;
+  }
+
+  .excalidraw .toolbar-red-command-bar .red-command-mode > div {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 680px) {
+  .excalidraw .toolbar-red-command-bar .App-toolbar > .Stack_horizontal {
+    gap: 2px;
+  }
+
+  .excalidraw .toolbar-red-command-bar .App-toolbar > .Stack_horizontal > .ToolIcon > .ToolIcon__icon,
+  .excalidraw .toolbar-red-command-bar .App-toolbar__extra-tools-trigger {
+    width: 2rem;
+  }
+}
