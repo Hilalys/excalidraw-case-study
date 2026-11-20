@@ -1,9 +1,28 @@
 {
-  "title": "",
-  "summary": "",
+  "title": "Three toolbar directions for Excalidraw",
+  "summary": "Compare a roomier toolbar, a compact layout with visible shortcuts, and a bright red toolbar that names the active tool. The original toolbar remains the default.",
   "favorite": "",
-  "variations": [],
+  "variations": [
+    {
+      "slug": "room-to-draw",
+      "name": "Room to Draw",
+      "idea": "More space between larger targets, in the same familiar toolbar.",
+      "screenshot": "shots/room-to-draw.png"
+    },
+    {
+      "slug": "technical-rail",
+      "name": "Technical Rail",
+      "idea": "A compact instrument rail with labeled tool groups and visible shortcut keycaps.",
+      "screenshot": "shots/technical-rail.png"
+    },
+    {
+      "slug": "red-command-bar",
+      "name": "Red Command Bar",
+      "idea": "A bright red toolbar with a dedicated readout for the current tool.",
+      "screenshot": "shots/red-command-bar.png"
+    }
+  ],
   "video": null,
   "pr": null,
-  "updated": ""
+  "updated": "2026-11-19"
 }
