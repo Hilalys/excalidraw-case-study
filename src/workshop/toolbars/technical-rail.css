@@ -9,7 +9,7 @@
   --rail-accent: #086c62;
   --rail-focus: #174ca2;
   --rail-mono: ui-monospace, Menlo, Consolas, monospace;
-  --rail-cell: 37px;
+  --rail-cell: 33px;
 }
 
 .excalidraw.theme--dark .toolbar-technical-rail {
