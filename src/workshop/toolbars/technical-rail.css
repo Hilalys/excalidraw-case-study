@@ -1,0 +1,209 @@
+.excalidraw .toolbar-technical-rail {
+  --rail-bg: #f3f7f8;
+  --rail-line: #b6c8ce;
+  --rail-ink: #203841;
+  --rail-muted: #415e68;
+  --rail-cap: #fff;
+  --rail-hover: #e2edf0;
+  --rail-active: #cceee8;
+  --rail-accent: #086c62;
+  --rail-focus: #174ca2;
+  --rail-mono: ui-monospace, Menlo, Consolas, monospace;
+  --rail-cell: 37px;
+}
+
+.excalidraw.theme--dark .toolbar-technical-rail {
+  --rail-bg: #17272e;
+  --rail-line: #516970;
+  --rail-ink: #e7f2f4;
+  --rail-muted: #b0c6ce;
+  --rail-cap: #243941;
+  --rail-hover: #263d46;
+  --rail-active: #183e3c;
+  --rail-accent: #81efd6;
+  --rail-focus: #9dc5ff;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar {
+  padding: 5px 7px;
+  border: 1px solid var(--rail-line);
+  border-block-start: 2px solid var(--rail-accent);
+  border-radius: 6px;
+  background: var(--rail-bg);
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal {
+  align-items: end;
+  flex-wrap: nowrap;
+  gap: 2px;
+  white-space: nowrap;
+  padding-block-start: 15px;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar__divider {
+  align-self: stretch;
+  height: auto;
+  margin-inline: 5px !important;
+  background: var(--rail-line);
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar
+  :is(.Stack_horizontal > .ToolIcon, .App-toolbar__extra-tools-trigger) {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--rail-cell);
+  height: 40px;
+  flex: 0 0 auto;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--rail-ink);
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar .App-toolbar__extra-tools-trigger {
+  --rail-group: "More";
+  width: 43px;
+  align-items: start;
+  padding-block-start: 4px;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > .ToolIcon > .ToolIcon__icon {
+  display: grid;
+  grid-template-rows: 18px 13px;
+  justify-items: center;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  padding-block: 2px;
+  background: transparent;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar
+  :is(.Stack_horizontal > .ToolIcon, .App-toolbar__extra-tools-trigger):not(:disabled):hover {
+  background: var(--rail-hover);
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar
+  :is(.Stack_horizontal > .ToolIcon[aria-pressed="true"], .App-toolbar__extra-tools-trigger--selected,
+    .App-toolbar__extra-tools-trigger[aria-expanded="true"]) {
+  border-color: var(--rail-accent);
+  background: var(--rail-active);
+  box-shadow: inset 0 -2px var(--rail-accent);
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar button:focus-visible {
+  outline: 2px solid var(--rail-focus);
+  outline-offset: 1px;
+  z-index: 1;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar
+  :is(.Stack_horizontal > .ToolIcon, .App-toolbar__extra-tools-trigger) svg {
+  width: 16px;
+  height: 16px;
+  color: var(--rail-ink);
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > .ToolIcon:disabled {
+  opacity: 0.45;
+}
+
+/* Use the native key labels where present; add the badges the stock rail omits. */
+.excalidraw .toolbar-technical-rail .App-toolbar:not(.zen-mode)
+  > .Stack_horizontal > .ToolIcon > .ToolIcon__icon
+  > .ToolIcon__keybinding,
+.excalidraw .toolbar-technical-rail .App-toolbar:not(.zen-mode)
+  > .Stack_horizontal > .ToolIcon > .ToolIcon__icon::after {
+  position: static;
+  box-sizing: border-box;
+  min-width: 15px;
+  padding-inline: 2px;
+  border: 1px solid var(--rail-line);
+  border-radius: 3px;
+  background: var(--rail-cap);
+  color: var(--rail-muted);
+  font: 600 9px / 11px var(--rail-mono);
+  text-align: center;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar:not(.zen-mode)
+  > .Stack_horizontal > .ToolIcon > .ToolIcon__icon > .ToolIcon__keybinding {
+  display: block;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > [data-testid="toolbar-hand"] {
+  --rail-key: "H";
+  --rail-group: "Navigate";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > [data-testid="toolbar-lock"] {
+  --rail-key: "Q";
+  --rail-group: "Mode";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar--compact > .Stack_horizontal
+  > [data-testid="toolbar-selection"] {
+  --rail-key: "V";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar:not(.zen-mode)
+  > .Stack_horizontal > .ToolIcon > .ToolIcon__icon::after {
+  content: var(--rail-key, none) / "";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > :is([data-testid="toolbar-rectangle"], [data-testid="toolbar-freedraw"],
+    [data-testid="toolbar-eraser"]) {
+  margin-inline-start: 8px;
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > [data-testid="toolbar-rectangle"] {
+  --rail-group: "Geometry";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > [data-testid="toolbar-freedraw"] {
+  --rail-group: "Markup";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+  > [data-testid="toolbar-eraser"] {
+  --rail-group: "Edit";
+}
+
+.excalidraw .toolbar-technical-rail .App-toolbar
+  :is(.Stack_horizontal > .ToolIcon, .App-toolbar__extra-tools-trigger)::before {
+  content: var(--rail-group, none) / "";
+  position: absolute;
+  inset-block-end: calc(100% + 4px);
+  inset-inline-start: 1px;
+  color: var(--rail-muted);
+  font: 700 9px / 11px var(--rail-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .excalidraw .toolbar-technical-rail {
+    --rail-cell: 32px;
+  }
+
+  @media (max-width: 660px) {
+    .excalidraw .toolbar-technical-rail {
+      --rail-cell: 29px;
+    }
+  }
+
+  .excalidraw .toolbar-technical-rail .App-toolbar > .Stack_horizontal
+    > :is([data-testid="toolbar-rectangle"], [data-testid="toolbar-freedraw"],
+      [data-testid="toolbar-eraser"]) {
+    margin-inline-start: 4px;
+  }
+}
